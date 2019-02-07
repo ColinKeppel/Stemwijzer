@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <script src="data.js"></script>
+    <title>Stemwijzer</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        p {
+            margin: 0;
+        }
+
+        hr {
+            margin: 0;
+            border-top: 1px solid #000;
+        }
+
+        .partyExplanationListItem {
+            cursor: pointer;
+        }
+
+        .checkboxList {
+            column-count: 3;
+        }
+
+        .checkboxItem {
+            display: inline-block;
+        }
+
+        #q {
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+<div class="w3-display-container">
+    <div class="w3-display-topmiddle w3-half">
+        <div class="w3-container w3-blue">
+            <h2>Stemwijzer</h2>
+            <h5 class="w3-hide" id="tQ"></h5>
+            <button class="w3-btn w3-display-middle" id="startBtn">Start</button>
+        </div>
+
+        <div class="w3-hide" id="statementsCon">
+            <p class="w3-medium w3-padding" id="q"></p>
+            <div class="w3-display-container">
+                <div class="w3-bar">
+                    <button class="w3-bar-item w3-button w3-green choiceButton" data-choice="pro">Eens</button>
+                    <button class="w3-bar-item w3-button w3-black choiceButton" data-choice="ambivalent">Geen van
+                        beide
+                    </button>
+                    <button class="w3-bar-item w3-button w3-red choiceButton" data-choice="contra">Oneens</button>
+                    <button class="w3-bar-item w3-button w3-right w3-opacity keuzeKnop" id="btnS" data-choice="0">Sla
+                        deze vraag over
+                    </button>
+                </div>
+            </div>
+            <div class="w3-bar">
+                <div class="w3-container w3-third">
+                    <h5><b>Eens</b></h5>
+                    <hr>
+                    <ul class="w3-ul w3-hoverable">
+                        <li class="w3-display-container partyExplanationListItem"><p class="w3-display-container">Test
+                            <i class="fas fa-sort-down w3-display-right"></i></p>
+                            <p class="w3-margin-top w3-hide partyExplanation">"Juist als je jong bent is het van groot
+                                belang de samenleving te leren kennen en je er voor in te zetten. Maatschappelijke
+                                dienstplicht is een goede manier om jongeren kennis te laten maken met andere kanten van
+                                de samenleving. Dat vergroot het begrip en is goed voor de onderlinge verbinding."</p>
+                        </li>
+                        <li class="w3-display-container partyExplanationListItem"><p class="w3-display-container">Test
+                            <i class="fas fa-sort-down w3-display-right"></i></p>
+                            <p class="w3-margin-top w3-hide partyExplanation">"Juist als je jong bent is het van groot
+                                belang de samenleving te leren kennen en je er voor in te zetten. Maatschappelijke
+                                dienstplicht is een goede manier om jongeren kennis te laten maken met andere kanten van
+                                de samenleving. Dat vergroot het begrip en is goed voor de onderlinge verbinding."</p>
+                        </li>
+                        <li class="w3-display-container partyExplanationListItem"><p class="w3-display-container">Test
+                            <i class="fas fa-sort-down w3-display-right"></i></p>
+                            <p class="w3-margin-top w3-hide partyExplanation">"Juist als je jong bent is het van groot
+                                belang de samenleving te leren kennen en je er voor in te zetten. Maatschappelijke
+                                dienstplicht is een goede manier om jongeren kennis te laten maken met andere kanten van
+                                de samenleving. Dat vergroot het begrip en is goed voor de onderlinge verbinding."</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="w3-container w3-third">
+                    <h5><b>Geen van beide</b></h5>
+                    <hr>
+                    <ul class="w3-ul w3-hoverable">
+                        <li class="w3-display-container partyExplanationListItem"><p class="w3-display-container">Test
+                            <i class="fas fa-sort-down w3-display-right"></i></p>
+                            <p class="w3-margin-top w3-hide partyExplanation">"Juist als je jong bent is het van groot
+                                belang de samenleving te leren kennen en je er voor in te zetten. Maatschappelijke
+                                dienstplicht is een goede manier om jongeren kennis te laten maken met andere kanten van
+                                de samenleving. Dat vergroot het begrip en is goed voor de onderlinge verbinding."</p>
+                        </li>
+                        <li class="w3-display-container partyExplanationListItem"><p class="w3-display-container">Test
+                            <i class="fas fa-sort-down w3-display-right"></i></p>
+                            <p class="w3-margin-top w3-hide partyExplanation">"Juist als je jong bent is het van groot
+                                belang de samenleving te leren kennen en je er voor in te zetten. Maatschappelijke
+                                dienstplicht is een goede manier om jongeren kennis te laten maken met andere kanten van
+                                de samenleving. Dat vergroot het begrip en is goed voor de onderlinge verbinding."</p>
+                        </li>
+                        <li class="w3-display-container partyExplanationListItem"><p class="w3-display-container">Test
+                            <i class="fas fa-sort-down w3-display-right"></i></p>
+                            <p class="w3-margin-top w3-hide partyExplanation">"Juist als je jong bent is het van groot
+                                belang de samenleving te leren kennen en je er voor in te zetten. Maatschappelijke
+                                dienstplicht is een goede manier om jongeren kennis te laten maken met andere kanten van
+                                de samenleving. Dat vergroot het begrip en is goed voor de onderlinge verbinding."</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="w3-container w3-third">
+                    <h5><b>Oneens</b></h5>
+                    <hr>
+                    <ul class="w3-ul w3-hoverable">
+                        <li class="w3-display-container partyExplanationListItem"><p class="w3-display-container">Test
+                            <i class="fas fa-sort-down w3-display-right"></i></p>
+                            <p class="w3-margin-top w3-hide partyExplanation">"Juist als je jong bent is het van groot
+                                belang de samenleving te leren kennen en je er voor in te zetten. Maatschappelijke
+                                dienstplicht is een goede manier om jongeren kennis te laten maken met andere kanten van
+                                de samenleving. Dat vergroot het begrip en is goed voor de onderlinge verbinding."</p>
+                        </li>
+                        <li class="w3-display-container partyExplanationListItem"><p class="w3-display-container">Test
+                            <i class="fas fa-sort-down w3-display-right"></i></p>
+                            <p class="w3-margin-top w3-hide partyExplanation">"Juist als je jong bent is het van groot
+                                belang de samenleving te leren kennen en je er voor in te zetten. Maatschappelijke
+                                dienstplicht is een goede manier om jongeren kennis te laten maken met andere kanten van
+                                de samenleving. Dat vergroot het begrip en is goed voor de onderlinge verbinding."</p>
+                        </li>
+                        <li class="w3-display-container partyExplanationListItem"><p class="w3-display-container">Test
+                            <i class="fas fa-sort-down w3-display-right"></i></p>
+                            <p class="w3-margin-top w3-hide partyExplanation">"Juist als je jong bent is het van groot
+                                belang de samenleving te leren kennen en je er voor in te zetten. Maatschappelijke
+                                dienstplicht is een goede manier om jongeren kennis te laten maken met andere kanten van
+                                de samenleving. Dat vergroot het begrip en is goed voor de onderlinge verbinding."</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-hide" id="importantStatementsCon">
+            <div class="w3-display-container">
+                <h5><b>Zijn er onderwerpen die u extra belangrijk vindt?</b></h5>
+                <p>Aangevinkte stellingen tellen extra mee bij het berekenen van het resulaat.</p>
+                <button id="nextBtn" class="w3-btn w3-round w3-right w3-margin w3-black">Ga verder</button>
+                <div class="w3-bar">
+                    <div class="checkboxList w3-grey w3-opacity w3-padding">
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>Bindend referendum</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>Bindend referendum</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>Bindend referendum</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>Bindend referendum</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>Bindend referendum</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>Bindend referendum</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>Bindend referendum</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>Bindend referendum</label></li>
+                        <hr>
+
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>Bindend referendum</label></li>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-hide" id="chosenPartiesCon">
+            <div class="w3-display-container">
+                <h5><b>Welke partijen wilt u meenemen in het resultaat?</b></h5>
+                <p>U kunt kiezen voor zittende partijen, die nu in de Tweede Kamer vertegenwoordigd zijn. Daarbij nemen
+                    we ook de partijen mee die in de peilingen op minimaal één zetel staan. U kunt alle partijen
+                    meenemen en u kunt een eigen selectie maken van tenminste drie partijen.</p>
+                <button id="finishBtn" class="w3-btn w3-round w3-right w3-margin w3-black">Voltooien</button>
+                <div class="w3-bar">
+                    <h5><b>Kies de partijen die u mee wilt nemen in het resultaat</b></h5>
+                    <div class="checkboxList w3-grey w3-opacity w3-padding">
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>VVD</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>VVD</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>VVD</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>VVD</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>VVD</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>VVD</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>VVD</label></li>
+                        <hr>
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>VVD</label></li>
+                        <hr>
+
+
+                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
+                            <label>Bindend referendum</label></li>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w3-hide" id="partiesResults">
+
+        </div>
+    </div>
+</div>
+<script src="Stemwijzer.js"></script>
+</body>
+</html>
+
+<script>
+    // var homo = 10;
+    // console.log(`Collin is facking gay ${homo}`);
+    // console.log("Collin is facking gay" + homo);
+
+
+    // document.getElementById('buttons').onclick = (event) => {
+    //     console.log(event);
+    // }
+</script>
