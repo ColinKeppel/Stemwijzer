@@ -23,10 +23,7 @@
 
         .checkboxList {
             column-count: 3;
-        }
-
-        .checkboxItem {
-            display: inline-block;
+            list-style: none;
         }
 
         #q {
@@ -150,44 +147,8 @@
                 <p>Aangevinkte stellingen tellen extra mee bij het berekenen van het resulaat.</p>
                 <button id="nextBtn" class="w3-btn w3-round w3-right w3-margin w3-black">Ga verder</button>
                 <div class="w3-bar">
-                    <div class="checkboxList w3-grey w3-opacity w3-padding">
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>Bindend referendum</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>Bindend referendum</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>Bindend referendum</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>Bindend referendum</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>Bindend referendum</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>Bindend referendum</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>Bindend referendum</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>Bindend referendum</label></li>
-                        <hr>
-
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>Bindend referendum</label></li>
-                        <hr>
-                    </div>
+                    <ul id="iQList" class="checkboxList w3-grey w3-opacity w3-padding">
+                    </ul>
                 </div>
             </div>
         </div>
@@ -201,44 +162,13 @@
                 <button id="finishBtn" class="w3-btn w3-round w3-right w3-margin w3-black">Voltooien</button>
                 <div class="w3-bar">
                     <h5><b>Kies de partijen die u mee wilt nemen in het resultaat</b></h5>
-                    <div class="checkboxList w3-grey w3-opacity w3-padding">
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>VVD</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>VVD</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>VVD</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>VVD</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>VVD</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>VVD</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>VVD</label></li>
-                        <hr>
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>VVD</label></li>
-                        <hr>
-
-
-                        <li class="checkboxItem"><input class="w3-check" type="checkbox">
-                            <label>Bindend referendum</label></li>
-                        <hr>
+                    <div class="w3-bar">
+                        <button class="w3-bar-item w3-button w3-gray" onclick="selectImportantPartiesCheckboxes('secular')">Selecteer zittende partijen</button>
+                        <button class="w3-bar-item w3-button w3-gray" onclick="selectImportantPartiesCheckboxes('all')">Selecteer alle partijen</button>
+                        <button class="w3-bar-item w3-button w3-gray" onclick="selectImportantPartiesCheckboxes('none')">Verwijder selectie</button>
                     </div>
+                    <ul id="iPList" class="checkboxList w3-grey w3-opacity w3-padding">
+                    </ul>
                 </div>
             </div>
         </div>
