@@ -25,29 +25,45 @@
             column-count: 3;
             list-style: none;
         }
-
+		#startBtn {
+			animation-name: startButtonScale;
+  			animation-duration: 1s;
+			animation-iteration-count: infinite;
+		}
         #q {
             min-height: 150px;
         }
+
     </style>
 </head>
 <body>
 <div class="w3-display-container">
+    <div id="Alert" class="w3-display-topright w3-hide w3-panel w3-pale-green w3-border">
+                <span onclick="this.parentElement.style.display='none'"
+                      class="w3-button w3-display-topright">&times;</span>
+        <h3>Success!</h3>
+        <p>Dit zijn uw resultaten uit de stemwijzer.</p>
+    </div>
     <div class="w3-display-topmiddle w3-half">
         <div class="w3-container w3-blue">
             <h2>Stemwijzer</h2>
             <button class="w3-btn w3-display-middle" id="startBtn">Start</button>
         </div>
-
         <div class="w3-hide" id="statementsCon">
+            <button class="w3-button w3-black w3-hover-white w3-bar-item w3-third w3-container w3-ripple" onclick="bColorWhite()">Wit</button>
+            <button class="w3-button w3-black w3-hover-gray w3-bar-item w3-third w3-container w3-ripple" onclick="bColorRed()">Gray</button>
+            <button class="w3-button w3-black w3-hover-light-blue w3-bar-item w3-third w3-container w3-ripple" onclick="bColorGreen()">Licht blauw</button>
+
             <h3 id="tQ"></h3>
             <p class="w3-medium w3-padding" id="q"></p>
             <div class="w3-display-container">
                 <div class="w3-bar">
                     <button class="w3-bar-item w3-button w3-green choiceButton" data-choice="pro">Eens</button>
-                    <button class="w3-bar-item w3-button w3-black choiceButton" data-choice="ambivalent">Geen van beide</button>
+                    <button class="w3-bar-item w3-button w3-black choiceButton" data-choice="ambivalent">Geen van
+                        beide
+                    </button>
                     <button class="w3-bar-item w3-button w3-red choiceButton" data-choice="contra">Oneens</button>
-                    <button class="w3-bar-item w3-button w3-right w3-opacity keuzeKnop" id="btnS" data-choice="0">Sla
+                    <button class="w3-bar-item w3-button w3-right w3-opacity choiceButton" id="btnS" data-choice="0">Sla
                         deze vraag over
                     </button>
                 </div>
@@ -150,8 +166,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="w3-hide" id="chosenPartiesCon">
+<!--test-->
+        <div class="w3-hide" id="importantPartiesCon">
             <div class="w3-display-container">
                 <h5><b>Welke partijen wilt u meenemen in het resultaat?</b></h5>
                 <p>U kunt kiezen voor zittende partijen, die nu in de Tweede Kamer vertegenwoordigd zijn. Daarbij nemen
@@ -171,21 +187,20 @@
             </div>
         </div>
         <div class="w3-hide" id="partiesResults">
+            <h3>Uw mening komt het best overeen met:</h3>
 
+			<div id="partiesResultsScoresCon">
+
+				<!--<div class="partyResultsScoreCon">-->
+					<!--<h5>VVD</h5>-->
+					<!--<div class="w3-light-grey">-->
+						<!--<div class="w3-container w3-green w3-center" style="width:20%">25%</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			</div>
         </div>
     </div>
 </div>
 <script src="Stemwijzer.js"></script>
 </body>
 </html>
-
-<script>
-    // var homo = 10;
-    // console.log(`Collin is facking gay ${homo}`);
-    // console.log("Collin is facking gay" + homo);
-
-
-    // document.getElementById('buttons').onclick = (event) => {
-    //     console.log(event);
-    // }
-</script>

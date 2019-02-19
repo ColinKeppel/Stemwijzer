@@ -9,6 +9,21 @@ var choiceButtons = document.getElementsByClassName("choiceButton");
 var partyExplanationListItems = document.getElementsByClassName("partyExplanationListItem");
 var importantPartiesCheckboxes = document.getElementsByClassName('importantPartiesCheckboxes');
 
+function bColorWhite()
+{
+    document.body.style.backgroundColor = "white";
+}
+
+function bColorRed()
+{
+    document.body.style.backgroundColor = "#9e9e9e";
+}
+
+function bColorGreen()
+{
+    document.body.style.backgroundColor = "#87CEEB";
+}
+
 function setupVoteGuide(position)  {
     if (position < subjects.length) {
         if (position == 0) {
@@ -89,6 +104,7 @@ function setupVoteGuide(position)  {
                 progressBarCon.appendChild(progressBar);
                 partyResultsScoreCon.appendChild(progressBarCon);
                 document.getElementById('partiesResultsScoresCon').appendChild(partyResultsScoreCon);
+                document.getElementById('Alert').classList.remove('w3-hide');
             }
 		});
 	}
@@ -106,6 +122,7 @@ function processChoice(choice) {
     }
     currentAppScreenCount++;
     setupVoteGuide(currentAppScreenCount);
+    console.log("Keuze verwerkt.");
 }
 
 // Zoekt de party waarbij de score omhoog moet
@@ -113,6 +130,7 @@ function processChoice(choice) {
 function findParty(partiesArray, partyToFind) {
     return partiesArray.find(function(element) {
         return element.name == partyToFind;
+        console.log("Party gevonden.");
     });
 }
 
@@ -127,14 +145,17 @@ function calculateScore() {
             if (subjectsCurrentElement.position == answersCurrentElement) {
                 var currentParty = findParty(parties, subjectsCurrentElement.name);
                 currentParty.partyScore++;
+                console.log("Punt uitgedeeld");
                 if(importantQuestions.indexOf(answersIndex.toString()) != -1) {
                     currentParty.partyScore++;
+                    console.log("Extra punt uitgedeeld");
                 }
             }
         });
     });
 	parties.forEach(function (element) {
-		element.partyScorePercentage = Math.round(element.partyScore * 100 / (answers.length + importantQuestions.length));
+		element.partyScorePercentage = Math.round(element.partyScore * 100 / (answers.length + importantQuestions.length))
+        console.log("Resultaat berekent.");
 	});
 }
 
@@ -163,11 +184,13 @@ function selectImportantPartiesCheckboxes(type) {
             if(element.checked == false) {
                 element.checked = true;
                 currentParty.important = true;
+                console.log("Alle parties geselecteerd");
             }
         } else if(type == "none") {
             element.checked = false;
             parties.forEach(function (currentValue) {
                 currentValue.important = false;
+                console.log("Alle parties weg gehaald.");
             });
         } else if(type == "secular") {
             var currentParty = findParty(parties, element.dataset.party);
@@ -175,6 +198,7 @@ function selectImportantPartiesCheckboxes(type) {
                 parties.forEach(function (currentValue) {
                     if (currentValue.secular == true) {
                         currentValue.important = true;
+                        console.log("Belangrijke party aangegeven.");
                     } else {
                         currentValue.important = false;
                     }
