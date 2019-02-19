@@ -1,5 +1,6 @@
 /*globals subjects, parties, iQ, iQInput, iQLabel*/
 // variabele met daarin alle stellingen van de stemwijzer
+//test
 var currentAppScreenCount = 0;
 var answers = [];
 var importantQuestions = [];
